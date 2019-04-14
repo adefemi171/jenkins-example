@@ -1,0 +1,15 @@
+pipeline{
+    environment{
+        BUILD_SCRIPTS_GIT="https://github.com/adefemi171/SMS-App-using-Python-and-Twilio.git"
+        BUILD_SCRIPTS='mypipeline'
+        BUILD_HOME='/home/potus/.jenkins/workspace'
+    }
+    agent any
+    stages{
+        stage ('Checkout: Code'){
+            steps{
+                sh "git clone $BUILD_SCRIPTS_GIT"
+            }
+        }
+    }
+}    
